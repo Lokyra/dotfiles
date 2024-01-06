@@ -7,6 +7,25 @@ local lspconfig = require("lspconfig")
 
 local util = require "lspconfig/util"
 
+local servers = {"tailwindcss", "eslint"}
+
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
+
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  init_options = {
+    preferences = {
+      disableSuggestion = true,
+    }
+  }
+}
+
 lspconfig.pyright.setup({
   on_attach = on_attach,
   capabilities = capabilities,
