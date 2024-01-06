@@ -78,7 +78,20 @@ local plugins = {
     init = function ()
       vim.g.rustfmt_autosave = 1
     end
-  }
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function()
+    local opts = require "plugins.configs.treesitter"
+    opts.ensure_installed = {
+        "lua",
+        "javascrip",
+        "typescript",
+        "tsx",
+      }
+      return opts
+    end
+  },
 }
 
 return plugins
