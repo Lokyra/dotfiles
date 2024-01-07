@@ -85,7 +85,7 @@ local plugins = {
     local opts = require "plugins.configs.treesitter"
     opts.ensure_installed = {
         "lua",
-        "javascrip",
+        "javascript",
         "typescript",
         "tsx",
       }
