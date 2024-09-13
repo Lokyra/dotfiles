@@ -50,4 +50,15 @@ M.gopher = {
   }
 }
 
+M.copy = {
+  plugin = true,
+  n = {
+    ["<leader>e"] = {
+      "<cmd>lua vim.diagnostic.open_float()<CR>",
+      "make errors yankable"
+    }
+  }
+}
+
+
 return M
